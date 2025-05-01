@@ -1,0 +1,476 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-size: 16px;
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+.grid-container-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header"
+        "div div"
+        "main main"
+        "div2 div2"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+/* Company Info Starts */
+header .company-info {
+    display: flex;
+    place-items: center;
+}
+
+header .company-info img {
+    height: 2rem;
+    width: 2rem;
+}
+
+header .company-info h1 {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    color: orange;
+    text-transform: uppercase;
+}
+
+/* Company Info ends */
+
+/* Search Bar Starts */
+header .search-bar {
+    height: 2rem;
+    display: flex;
+    place-items: center;
+    gap: 0.3rem;
+    padding: 0 0.8rem;
+    font-size: 1rem;
+    color: orange;
+    border-radius: 50px;
+    border: 0.0625rem solid orange;
+}
+
+header .search-bar input {
+    font-size: 1rem;
+    color: orange;
+    border: none;
+    background: none;
+}
+
+header .search-bar input::placeholder {
+    color: rgba(255, 165, 0, 0.5);
+    transition: text-shadow 0.5s ease-in-out;
+}
+
+header .search-bar input:hover::placeholder {
+    color: rgba(255, 165, 0, 0.65);
+    text-shadow: 0 0 7px rgba(255, 165, 0, 1);
+}
+
+/* Search Bar Ends */
+
+/* Nav Starts */
+header nav {
+    display: flex;
+}
+
+header nav ul {
+    display: flex;
+    gap: 0.5rem;
+    place-items: center;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    display: flex;
+    place-items: center;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    color: orange;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+header nav ul li:nth-child(5) a {
+    background: rgba(255, 165, 0, 0.2);
+    border-radius: 50px;
+}
+
+header nav ul li a img {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 0.4rem;
+}
+
+header nav ul li a:hover {
+    background: rgba(220, 131, 0, 1);
+    ;
+    color: black;
+}
+
+/* Nav Ends */
+/* Header Ends */
+
+.divider:nth-of-type(1) {
+    grid-area: div;
+    height: 1px;
+    background: linear-gradient(270deg, violet, purple, indigo, blue, teal, green, yellow, orange, red, pink);
+}
+
+/* Main Starts */
+main {
+    grid-area: main;
+    padding: 2rem 2.5rem;
+    background: #1A1100;
+    /* border: 2px solid white; */
+}
+
+main .webp-banner {
+    height: 12.5rem;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url(./img/gi2.png) center center;
+    background-size: cover;
+    border-radius: 15px;
+    border: 0.0225rem solid orange;
+}
+
+main .webp-banner div {
+    height: auto;
+    width: 60%;
+}
+
+main .webp-banner div p:nth-child(1) {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+main .webp-banner div p:nth-child(2) {
+    display: block;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 1000;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+main .webp-banner div p:nth-child(2) span {
+    color: orange;
+    font-size: 2rem;
+}
+
+main .webp-banner div a {
+    /* Banner Button */
+    display: inline-flex;
+    color: black;
+    font-size: 0.6rem;
+    font-weight: 1000;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: rgba(220, 131, 0, 1);
+}
+
+/* Banner Ends */
+
+/* Most Popular Right Now Starts */
+main .popular-right-now {
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(100, 64.7, 0, 1), rgba(40, 25.88, 0, 1));
+}
+
+main .popular-right-now h2,
+main .gaming-library h3 {
+    padding: 1rem 2rem;
+}
+
+main .popular-right-now h2 span:nth-child(1),
+main .gaming-library h3 span:nth-child(1) {
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+main .popular-right-now h2 span:nth-child(2),
+main .gaming-library h3 span:nth-child(2) {
+    color: orange;
+    font-size: 1.5rem;
+}
+
+main .popular-right-now .popular-games-container {
+    /* Popular Game Grid Container */
+    padding: 0 2rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 0.6rem;
+    position: relative;
+}
+
+.game-card {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background: black;
+    border: 0.0225rem solid orange;
+
+}
+
+.game-card img {
+    height: 9.5rem;
+    width: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+.game-info {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.g-info-1,
+.g-info-2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.g-info-1 div:nth-child(1) {
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: block;
+}
+
+.g-info-1 div:nth-child(2) {
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    place-items: center;
+    gap: 0.3rem;
+}
+
+.g-info-1 div:nth-child(2) i {
+    /* Star Icon */
+    font-size: 0.7rem;
+    color: yellow;
+    font-weight: bold;
+    display: block;
+}
+
+.g-info-2 div:nth-child(1) {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+}
+
+.g-info-2 div:nth-child(2) {
+    font-size: 0.7rem;
+    font-weight: bold;
+    display: flex;
+    place-items: center;
+    gap: 0.3rem;
+}
+
+.g-info-2 div:nth-child(2) i {
+    /* Download Icon */
+    font-size: 0.7rem;
+    color: orange;
+    font-weight: bold;
+    display: block;
+}
+
+.div-button {
+    display: block;
+    position: absolute;
+    top: 97%;
+    left: 42.5%;
+    color: black;
+    font-size: 0.6rem;
+    font-weight: 1000;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: none;
+    background: rgba(220, 131, 0, 1);
+}
+
+/* Most popular Right now Ends */
+
+/* Gaming Library Starts */
+.gaming-library {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    border-radius: 15px;
+    position: relative;
+    background: rgba(255, 164, 0, 0.07);
+    border: 0.0325rem solid orange;
+}
+
+.your-game {
+    /* Your Game Main Container */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin: 2rem 0;
+}
+
+.margin-top--disable {
+    margin-top: 0.5rem;
+}
+
+.game-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.game-title>img {
+    /* Game Icon */
+    height: auto;
+    width: 3rem;
+    border-radius: 10px;
+}
+
+.gt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* End of  Game Title & Start Of Game info */
+.yg-game-info {
+    /* Main Container */
+    display: flex;
+    place-items: center;
+    gap: 4rem;
+}
+
+.yg-game-info li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.yg-g-title {
+    /* Fixed width for title to avoid interference */
+    width: 6rem;
+}
+
+.yg-bold-text {
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.yg-thin-text {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* End Of Game Info & Start Of Download Button */
+.button {
+    /* Download Button */
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 0.0625rem solid rgba(255, 255, 255, 1);
+}
+
+.active {
+    color: orange;
+    border: 0.0625rem solid orange;
+}
+
+.disable {
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.5);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.5);
+}
+
+.yg-library-btn {
+    top: 95.5%;
+}
+
+/* Gaming Library Ends */
+
+/* Main Ends */
+
+.divider:nth-of-type(2) {
+    grid-area: div2;
+    height: 1px;
+    background: linear-gradient(90deg, violet, purple, indigo, blue, teal, green, yellow, orange, red, pink);
+}
+
+/* Footer Starts */
+footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer>p {
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1.5rem;
+    position: relative;
+    background-clip: padding-box;
+}
+
+footer p span {
+    font-size: 0.7rem;
+}
+
+footer p span::after {
+    content: "\A";
+    white-space: pre;
+}
+
+/* Footer Ends */
+
+
+
+
+@media (max-width: 768px) {
+    .grid-container-page {
+        grid-template-columns: 1fr;
+        /* Single column for smaller screens */
+        grid-template-areas:
+            "header"
+            "div"
+            "main"
+            "div2"
+            "footer";
+    }
+}

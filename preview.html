@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Markdown Preview</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .markdown-body {
+            font-family: system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <div id="content">Loading markdown...</div>
+    <script>
+        fetch("README.md")
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById("content").innerHTML = marked.parse(text);
+            });
+    </script>
+</body>
+
+</html>
